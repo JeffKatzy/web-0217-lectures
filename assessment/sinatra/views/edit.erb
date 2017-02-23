@@ -1,0 +1,20 @@
+<h1>New User Signup</h1>
+
+<form method="POST" action="/users/<%=@user.id%>">
+<input name="_method" type="hidden" value="PATCH" />
+
+<h3>Name: </h3>
+<input type="text" name="user_name" id="new_user_name"  value="<%= @user.name %>"/>
+<br />
+<br />
+<h3>E-mail Address</h3>
+<input type="text" name="email" id="new_email" value="<%= @user.email %>"/>
+<br />
+<br />
+<h3>Password</h3>
+<input type="text" name="password" id="new_password" value="<%= @user.password %>" />
+<br />
+<br />
+<input type="submit" name="submit" value="Update Information" />
+
+</form>

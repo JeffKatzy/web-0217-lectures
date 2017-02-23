@@ -1,21 +1,40 @@
 class UsersController < ApplicationController
 
-  def new
-    @user = User.new
+  get '/users/new' do
+    erb :'/views/new'
   end
-  # /users/new
 
-  # create
+  post '/users' do
+    @user = User.create(name: params["user_name"],email: params["email"],password: params["password"])
+    redirect "/users/#{@user.id}"
+  end
 
-  # index
+  get '/users' do
+    @users = User.all
+    erb :index
+  end
 
-  # show
+  get '/users/:id' do
+    @user = User.find(params[:id])
+    erb :show
+  end
 
-  # edit
+  get '/users/:id/edit' do
+    @user = User.find(params[:id])
+    erb :edit
+  end
 
-  # update
+  patch '/users/:id' do
+    @user = User.update(name: params["user_name"],email: params["email"],password: params["password"])
+    @user.save
+    redirect "/users/#{@user.id}"
+  end
 
-  # destroy
+  delete '/users/:id/delete' do
+    @user = User.find(params[:id])
+    @user.delete
+    redirect '/users/new'
+  end
 
 end
 

@@ -7,17 +7,17 @@
 # you are doing it wrong :(
 
 # Build the following methods on the customer class
-  # Customer.all
-  # Customer.find_by_name(name)
-  # Customer#add_review
-  # Customer#add_restaurant
+  # Customer.all - DONE
+  # Customer.find_by_name(name) - DONE
+  # Customer#add_review - DONE
+  # Customer#add_restaurant -DONE
 
-  # Review.all
-  # Review#customer
-  # Review#restaurant
+  # Review.all -DONE
+  # Review#customer - done
+  # Review#restaurant -done
 
-  # Restaurant.all
-  # Restaurant.find_by_name(name)
-  # Restaurant#reviews
-  # Restaurant#customers
+  # Restaurant.all -DONE
+  # Restaurant.find_by_name(name) -DONE
+  # Restaurant#reviews -done
+  # Restaurant#customers -done
     # should return all of the customers who have written reviews.
