@@ -11,19 +11,31 @@
 
 # Eg. for our books and authors your deliverable would look like
 
-# books
-id | title | author_id
+# customers
+id | name
 
-# author
-id | name |
+# restaurants
+id | name | owner_id
 
-# Hints:
-# - The data always lives on the belongs to relationship
-# - Do the belongs_to first
-# - Then do the has_many
-# - If there is a many to many, we need a third table
+# owners (assuming an owner can have multiple restaurants)
+id | name
 
-# Write your answer here.
+# reviews
+id | content | restaurant_id | customer_id
+
+#------------------------------------------------------------------------------------
+#we are using reviews as out join table instead of making a new one.
+customers < reviews,
+          < restaurants though reviews
+
+restaurants < reviews
+            < customers through reviews
+            - owner
+
+owners < restaurants
+
+reviews - customer
+        - restaurant
 
 # 2. As a second step, please fill in the stubbed out methods in the respective model.
 # Customer#reviews
