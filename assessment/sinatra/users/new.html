@@ -2,3 +2,15 @@
 
 <!-- Write out all of the appropriate html for a user who goes to the form to create a new user -->
 <!-- Imagine that a user both a name and a hometown -->
+
+<form action="/users" method="POST">
+
+  <label> User Name </label>
+  <input type="text" name="user[name]" >
+
+  <label> Hometown </label>
+  <input type="text" name="user[hometown]" >
+
+  <input type="submit" value="submit">
+
+</form>

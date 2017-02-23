@@ -25,6 +25,22 @@ id | name |
 
 # Write your answer here.
 
+Customers
+  has_many :reviews
+  has_many :restaurants, through: :reviews
+
+Owners
+  has_many :restaurants
+
+Restaurants
+  belongs_to :owner
+  has_many :reviews
+  has_many :customers, through: :reviews
+
+Reviews
+  belongs_to :customers
+  belongs_to :restaurants
+
 # 2. As a second step, please fill in the stubbed out methods in the respective model.
 # Customer#reviews
 # Owner#restaurants
