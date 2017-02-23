@@ -24,6 +24,22 @@ id | name |
 # - If there is a many to many, we need a third table
 
 # Write your answer here.
+A customer has many reviews
+A restaurant has many customers and many reviews, and belongs to an owner
+A review belongs to a customer and belongs to a restaurant
+An owner has many restaurants
+
+# customer
+id | name 
+
+# restaurant
+id | name | owner_id
+
+# review
+id | customer_id | restaurant_id
+
+# owner
+id | name
 
 # 2. As a second step, please fill in the stubbed out methods in the respective model.
 # Customer#reviews

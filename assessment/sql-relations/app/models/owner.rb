@@ -10,5 +10,11 @@ class Owner
   attr_reader :id
 
   def restaurants
+    sql = <<-SQL
+      SELECT restaurant.* FROM restaurants
+      WHERE restaurant.owner_id = ?
+    SQL
+
+    self.class.db.execute(sql, self.id)
   end
 end

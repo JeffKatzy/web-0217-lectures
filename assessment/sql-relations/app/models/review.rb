@@ -14,9 +14,21 @@ class Review
   
 
   def customer
+    sql = <<-SQL
+      SELECT customer.* FROM customers
+      WHERE customer.id = ?
+    SQL
+
+    self.class.db.execute(sql, self.customer_id)
   end
 
   def restaurant
+    sql = <<-SQL
+      SELECT restaurant.* FROM restaurants
+      WHERE restaurant.id = ?
+    SQL
+
+    self.class.db.execute(sql, self.restaurant_id)
   end
 
 end
