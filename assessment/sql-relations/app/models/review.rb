@@ -11,12 +11,18 @@ class Review
   attr_accessor(*self.public_attributes)  
   attr_reader :id
 
-  
-
   def customer
+    sql = <<-SQL
+      SELECT * FROM customers WHERE id=?
+    SQL
+    self.class.db.execute(sql, self.customer_id)
   end
 
   def restaurant
+    sql = <<-SQL
+      SELECT * FROM restaurants WHERE id=?
+    SQL
+    self.class.db.execute(sql, self.restaurant_id)
   end
 
 end

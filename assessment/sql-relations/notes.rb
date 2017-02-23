@@ -25,6 +25,29 @@ id | name |
 
 # Write your answer here.
 
+# customers
+All the ids on the left hand side are PKs (Primary Keys)
+FK means Foreign Key
+
+id |name| 
+Customers has many Reviews
+
+# restaurants 
+id | name | owner_id (FK)
+Restaurants has many Reviews
+Restaurants has many Customers through Reviews
+Restaurants belongs to an Owner
+
+# owners
+id | name
+Owners has many Restaurants
+
+
+# reviews (the join table for restaurants and reviews)
+id | name | restaurant_id (FK) | customer_id (FK)
+Review belongs to a Restaurant
+Review belongs to a Customer
+
 # 2. As a second step, please fill in the stubbed out methods in the respective model.
 # Customer#reviews
 # Owner#restaurants
