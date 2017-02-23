@@ -4,7 +4,11 @@ class UsersController < ApplicationController
     @user = User.new
   end
   # /users/new
+  get 'users/new' do
 
+
+  erb :new
+  end
   # create
 
   # index
