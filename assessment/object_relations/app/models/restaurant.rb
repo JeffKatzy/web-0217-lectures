@@ -26,8 +26,13 @@ class Restaurant
     restaurant_review = Review.new(review_text)
     restaurant_review.customer = customer_obj
     customer_obj.reviews << restaurant_review
-    customer_obj.restaurants << self
-    self.customers << customer_obj
+    if !customer_obj.restaurants.include?(self)
+      customer_obj.restaurants << self
+    end
+    
+    if !self.customers.include?(customer_obj)
+      self.customers << customer_obj
+    end
     self.reviews << restaurant_review
 
   end
