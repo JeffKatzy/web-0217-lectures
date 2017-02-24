@@ -8,6 +8,7 @@ class UsersController < ApplicationController
 
   # create
   post '/users/:id' do
+#     post '/users'
     @user = User.create(params)
     @user.save
     redirect to "/users/#{@user.id}"
@@ -15,11 +16,13 @@ class UsersController < ApplicationController
 
   # index
   get '/users' do
+#     @users = User.all
     erb :index
   end
 
   # show
-  get '/users' do
+  get '/users/:id' do
+    @user = User.find(params[:id])
     erb :show
   end
 
