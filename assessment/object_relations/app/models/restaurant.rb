@@ -21,7 +21,8 @@ class Restaurant
 	end
 
 	def reviews
-		@reviews << Review.all.find {|review| review.restaurant.name == self.name}
+# 		@reviews << Review.all.find {|review| review.restaurant.name == self.name}
+		@reviews = Review.all.select {|review| review.restaurant == self}
 	end
 
 	def customers
