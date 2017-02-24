@@ -17,6 +17,7 @@ class UsersController < ApplicationController
 
   # index
   get '/users' do
+#     @users = User.all
     erb :index
   end
 
