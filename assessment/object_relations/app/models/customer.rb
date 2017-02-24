@@ -33,8 +33,10 @@ class Customer
 
     customer_review = Review.new(review_text)
     customer_review.restaurant = restaurant_obj
+    # should also pass through a customer to a review.
     restaurant_obj.reviews << customer_review
     restaurant_obj.customers << self
+    # The problem if a customer has two reviews, the customer will now be listed twice.
     self.restaurants << restaurant_obj
     self.reviews << customer_review
 
