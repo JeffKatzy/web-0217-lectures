@@ -14,9 +14,9 @@ class Restaurant
 
   def owner
     sql = <<-SQL
-      SELECT owner.* FROM owners
-      JOIN restaurant ON restaurant.owner_id = id
-      WHERE owner.id = ?
+      SELECT owners.* FROM owners
+      JOIN restaurants ON restaurant.owner_id = id
+      WHERE owners.id = ?
     SQL
 
     self.class.db.execute(sql, self.owner_id)
