@@ -6,20 +6,40 @@ class UsersController < ApplicationController
   # /users/new
   get 'users/new' do
 
-
   erb :new
   end
   # create
-
+  post 'users' do
+    @user = User.creat(params[:user])
+    redirect to "users/:id"
+  end
   # index
+  get 'users' do
 
+    erb :index
+  end
   # show
-
+  get 'users/:id' do
+    @user = User.find(params[:id])
+  erb :show
   # edit
-
+  get 'users/:id/edit' do
+    @user = User.find(params[:id])
+    erb :edit
+  end
   # update
+  patch 'users/:id' do
+    @user = User.find(params[:id])
+    @user.name = params[:user][:name]
+    @user.details = params[:user][:details]
+    @user.save
+  end
+
 
   # destroy
+  delete 'users/:id' do
+    
+  end
 
 end
 
