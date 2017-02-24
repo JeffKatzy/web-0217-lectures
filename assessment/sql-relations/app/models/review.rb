@@ -23,6 +23,7 @@ class Review
     SQL
   end
   self.class.db.execute(sql, self.customer_id)
+# movve this into the method
 
 
   def restaurant
@@ -34,6 +35,8 @@ class Review
     SQL
   end
   self.class.db.execute(sql, self.restaurant_id)
+
+# move this into the method
 
 
 end
