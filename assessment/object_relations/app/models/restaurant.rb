@@ -5,6 +5,7 @@ class Restaurant
 	attr_accessor :name, :reviews, :customers
 
 	def initialize(name, reviews=[], customers=[])
+# 		good use of default arguments here.
 		@name = name
 		@reviews = reviews
 		@customers = customers
