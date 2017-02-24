@@ -18,6 +18,7 @@ class Customer
 	end
 
 	def add_review(phrase)
+# 		Here you all want to pass through a restaurant object, a restaurant belongs to a review.
 		@reviews << Review.new(phrase)
 
 	end
