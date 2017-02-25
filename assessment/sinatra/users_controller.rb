@@ -16,6 +16,7 @@ class UsersController < ApplicationController
     #should extract information of the user here and use it's initializer
     #User.new(params) either meta assignment or explicit
     #@user would be assigned and passed for show
+    redirect "/users/@user.id"
     erb :show
   end
 
