@@ -23,7 +23,8 @@ class UsersController < ApplicationController
   # show
   get '/users/:id' do
     @user = User.find(params[:id])
-    erb :show
+    redirect "users/"#{@user.id}"
+
   end
 
   # edit
@@ -37,7 +38,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @user.update(params[:user])
     # params[:user] will here be the new edits submitted from the edit.erb page
-    erb :show
+    redirect "users/"#{@user.id}"
   end
 
   # destroy
