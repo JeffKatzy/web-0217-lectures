@@ -30,7 +30,7 @@ class Customer
   end
 
   def add_review(review_text, restaurant_obj)
-
+#   good check to see if already included
     customer_review = Review.new(review_text)
     customer_review.restaurant = restaurant_obj
     restaurant_obj.reviews << customer_review
