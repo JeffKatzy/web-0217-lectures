@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   # create
   post 'users' do
     @user = User.creat(params[:user])
+#     users/@user.id
     redirect to "users/:id"
   end
   # index
