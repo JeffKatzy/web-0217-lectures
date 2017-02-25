@@ -25,6 +25,7 @@ class UsersController < ApplicationController
   end
 
   patch '/users/:id' do
+#     need to specify which user, you are updating
     @user = User.update(name: params["user_name"],email: params["email"],password: params["password"])
     @user.save
     redirect "/users/#{@user.id}"
