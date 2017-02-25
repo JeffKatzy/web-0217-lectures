@@ -14,12 +14,14 @@ class Customer
   end
 
   def self.find_by_name(name)
+#     here, each is a customer object, so its customer.name == name, and not self.name
     self.all.find{ |customer_name| customer_name == self.name}
   end
 
   def add_review(review, restaurant)
     # create new instance of a review with
     new_review =  Review.new(review, restaurant)
+#     here want to pass through the object itself for self.review = , and not just the string.
     self.review = new_review.review
     self.restaurant = new_review.restaurant
   end
