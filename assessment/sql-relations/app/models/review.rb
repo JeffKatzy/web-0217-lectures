@@ -14,7 +14,8 @@ class Review
   def customer
     sql = <<-SQL
       SELECT * FROM customers
-      WHERE customers.customer_id = ?
+WHERE customers.id = ?
+
     SQL
     self.class.db.execute(sql, self.customer_id)
   end
