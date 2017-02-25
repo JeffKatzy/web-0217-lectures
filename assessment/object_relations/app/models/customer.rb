@@ -16,6 +16,7 @@ class Customer
   end
 
   def add_review(description, restaurant)
+#     here, want to pass through the customer itself.
     new_review = Review.new(description, self.name, restaurant)
     new_review
   end
