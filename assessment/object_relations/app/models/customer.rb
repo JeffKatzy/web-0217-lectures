@@ -14,6 +14,7 @@ class Customer
   end
 
   def self.find_by_name(name)
+#     Would prefer we just use the find method here.
     @@all.each do |customer|
       return customer if customer.name == name
     end
@@ -26,8 +27,11 @@ class Customer
   #do we really want the possibility to create a new restaurant here?
   #think it would make more sense to control that when the form is being processed
   #because the user would either select existing or make new.
-  def add_review(review)
+  def add_review(review, restaurant)
+#     use the method instead of the instance variable.
     @reviews.add(review)
+#     probably would pass through a restaurant to the method, because otherwise can call method without a restaurant.
+#     are you passing through a restaurant here, if so review, wouldn't have a restaurant at this time, so restaurant would be nil.
     add_restaurant(review.restaurant)
     review.restaurant.add_customer_review(self, review)
   end
