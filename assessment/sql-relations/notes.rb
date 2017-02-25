@@ -81,4 +81,5 @@ Review#restaurant
   SELECT * FROM restaurants
   INNER JOIN reviews ON restaurant.id = review.restaurant_id
   WHERE review.id = ?
+WHERE reviews.id =? 
   SQL
