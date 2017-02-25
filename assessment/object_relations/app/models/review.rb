@@ -3,14 +3,11 @@ class Review
   attr_accessor :description, :customer, :restaurant
 
   def initialize(description, customer, restaurant)
+#     this is very good i would just break this up into smaller methods, like perhaps the customer= method.
+    
+    
     @description = description
-    customer_object = nil
-    if Customer.find_by_name(customer) == nil
-      customer_object = Customer.new(restaurant)
-    else
-      customer_object = Customer.find_by_name(customer)
-    end
-    @customer = customer_object
+
     restaurant_object = nil
     if Restaurant.find_by_name(restaurant) == nil
       restaurant_object = Restaurant.new(restaurant)
@@ -23,6 +20,10 @@ class Review
 
   def self.all
     @@all
+  end
+  
+  def customer=(customer)
+#     fill in teh code here.
   end
 
 end
