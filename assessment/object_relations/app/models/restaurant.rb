@@ -31,12 +31,14 @@ class Restaurant
     self.reviews_as_objects.map do |review|
        review.customer
     end
+#     this is good.
   end
 
   def customers
     self.customers_as_objects.map do |customer|
       customer.name
     end
+#     here return the customer object for customers.
   end
 
 
